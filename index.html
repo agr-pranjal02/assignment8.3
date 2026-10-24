@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 8.3 - Daily Magazine</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f3f5;
+            color: #222;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .magazine {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-areas:
+                "header header"
+                "nav nav"
+                "main sidebar"
+                "footer footer";
+            gap: 20px;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #173b65;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 5px;
+        }
+
+        .nav {
+            grid-area: nav;
+            background-color: #222;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav a:hover {
+            color: #ffd166;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .main img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .main h2 {
+            font-size: 28px;
+            color: #173b65;
+            line-height: 1.3;
+        }
+
+        .category {
+            color: #d35400;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .sidebar h2 {
+            border-bottom: 3px solid #173b65;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .news-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-item h3 {
+            font-size: 17px;
+            margin-bottom: 5px;
+        }
+
+        .news-item p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* Responsive layout for mobile screens */
+        @media (max-width: 700px) {
+            body {
+                padding: 10px;
+            }
+
+            .magazine {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "header"
+                    "nav"
+                    "main"
+                    "sidebar"
+                    "footer";
+                gap: 12px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .main {
+                padding: 18px;
+            }
+
+            .main h2 {
+                font-size: 23px;
+            }
+
+            .main img {
+                height: 220px;
+            }
+
+            .nav {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="magazine">
+
+        <header class="header">
+            <h1>THE DAILY TIMES</h1>
+            <p>Your daily source of news, knowledge and inspiration</p>
+        </header>
+
+        <nav class="nav">
+            <a href="#home">Home</a>
+            <a href="#technology">Technology</a>
+            <a href="#education">Education</a>
+            <a href="#sports">Sports</a>
+            <a href="#science">Science</a>
+        </nav>
+
+        <main class="main" id="home">
+            <span class="category">Featured Article</span>
+
+            <h2>How Artificial Intelligence Is Changing the World</h2>
+
+            <img
+                src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1000"
+                alt="Artificial intelligence technology">
+
+            <p>
+                <strong>Technology Desk | October 2026</strong>
+            </p>
+
+            <p>
+                Artificial Intelligence is transforming the way people
+                learn, work and communicate. From smart assistants to
+                advanced scientific research, AI is becoming an important
+                part of everyday life.
+            </p>
+
+            <p>
+                Students are using AI-powered tools to understand difficult
+                concepts, practice programming and explore new ideas.
+                Businesses are also using AI to improve productivity and
+                solve complex problems.
+            </p>
+
+            <p>
+                As technology continues to develop, responsible use,
+                creativity and digital skills will become increasingly
+                important for the next generation.
+            </p>
+        </main>
+
+        <aside class="sidebar">
+            <h2>Latest News</h2>
+
+            <div class="news-item" id="technology">
+                <h3>Technology</h3>
+                <p>New innovations are making digital tools more accessible.</p>
+            </div>
+
+            <div class="news-item" id="education">
+                <h3>Education</h3>
+                <p>Digital learning is creating new opportunities for students.</p>
+            </div>
+
+            <div class="news-item" id="sports">
+                <h3>Sports</h3>
+                <p>Young athletes continue to inspire the next generation.</p>
+            </div>
+
+            <div class="news-item" id="science">
+                <h3>Science</h3>
+                <p>Researchers explore new solutions to global challenges.</p>
+            </div>
+        </aside>
+
+        <footer class="footer">
+            <p>&copy; 2026 The Daily Times | Assignment 8.3</p>
+            <p>Designed using HTML and CSS Grid Areas</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

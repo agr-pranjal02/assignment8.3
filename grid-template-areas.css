@@ -1,0 +1,10 @@
+.magazine {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+        "header header"
+        "nav nav"
+        "main sidebar"
+        "footer footer";
+    gap: 20px;
+}
